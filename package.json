@@ -4,7 +4,12 @@
   "description": "Makes writing JavaScript more strict by throwing errors when you initialise variables with invalid inputs.",
   "main": "./src/index.js",
   "scripts": {
-    "lint": "jslint src/**/*.js test/**/*.js",
+    "build": "npm run clean && npm run build:*.js && npm run build:*.min.js",
+    "build:*.js": "browserify src/index.js -d -s solid | exorcist bin/solid.js.map | node tasks/header.js > bin/solid.js",
+    "build:*.min.js": "browserify src/index.js -d -s solid | uglifyjs --mangle-props 2 -m -c drop_console=true | node tasks/header.js > bin/solid.min.js",
+    "watch": "watch 'npm run build' ./src",
+    "clean": "rimraf bin/*",
+    "lint": "jshint src test tasks",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,7 +36,7 @@
     "browserify": "^14.0.0",
     "clean": "^4.0.2",
     "exorcist": "^0.4.0",
-    "jslint": "^0.10.3",
+    "jshint": "^2.9.4",
     "mocha": "^3.2.0",
     "rimraf": "^2.5.4",
     "uglify-js": "^2.7.5",

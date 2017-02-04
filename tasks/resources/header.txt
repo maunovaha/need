@@ -1,0 +1,5 @@
+/**
+ * @author        <%= pkg.author %>
+ * @copyright     2017 Mauno Vähä
+ * @version       <%= pkg.version %> - Built: <%= date %>
+ */
