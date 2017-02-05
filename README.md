@@ -1,4 +1,4 @@
-# Solid
+# Strict types
 
 Adds layer of strictness to writing JavaScript by throwing errors when variables contains values of unexpected types.
 
