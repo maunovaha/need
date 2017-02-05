@@ -1,6 +1,6 @@
 # Solid
 
-Makes writing JavaScript more strict by throwing errors when you initialise variables with invalid inputs.
+Adds layer of strictness to writing JavaScript by throwing errors when variables contains values of unexpected types.
 
 ### Problem
 
