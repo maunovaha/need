@@ -1,25 +1,25 @@
 {
-  "name": "solid",
+  "name": "strict-types",
   "version": "1.0.0",
-  "description": "Makes writing JavaScript more strict by throwing errors when you initialise variables with invalid inputs.",
+  "description": "Adds layer of strictness to writing JavaScript by throwing errors when variables contains values of unexpected types.",
   "main": "./src/index.js",
   "scripts": {
     "build": "npm run clean && npm run build:*.js && npm run build:*.min.js",
-    "build:*.js": "browserify src/index.js -d -s solid | exorcist bin/solid.js.map | node tasks/header.js > bin/solid.js",
-    "build:*.min.js": "browserify src/index.js -d -s solid | uglifyjs --mangle-props 2 -m -c drop_console=true | node tasks/header.js > bin/solid.min.js",
+    "build:*.js": "browserify src/index.js -d -s strict | exorcist bin/strict-types.js.map | node tasks/header.js > bin/strict-types.js",
+    "build:*.min.js": "browserify src/index.js -d -s strict | uglifyjs --mangle-props 2 -m -c drop_console=true | node tasks/header.js > bin/strict-types.min.js",
     "watch": "watch 'npm run build' ./src",
     "clean": "rimraf bin/*",
     "lint": "jshint src test tasks",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require should --recursive"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/maunovaha/solid.git"
+    "url": "https://github.com/maunovaha/strict-types.git"
   },
   "bugs": {
-    "url": "https://github.com/maunovaha/solid/issues"
+    "url": "https://github.com/maunovaha/strict-types/issues"
   },
-  "homepage": "https://github.com/maunovaha/solid#readme",
+  "homepage": "https://github.com/maunovaha/strict-types#readme",
   "keywords": [
     "javascript",
     "util",
@@ -39,6 +39,7 @@
     "jshint": "^2.9.4",
     "mocha": "^3.2.0",
     "rimraf": "^2.5.4",
+    "should": "^11.2.0",
     "uglify-js": "^2.7.5",
     "underscore.template": "^0.1.7",
     "watch": "^1.0.1"

@@ -13,6 +13,7 @@ if (args.length) {
 function header(data) {
   var headerFile = fs.readFileSync(path.join(__dirname, "resources", "header.txt"), "utf8")
     , headerText = template(headerFile, { date: new Date().toISOString(), pkg: pkg });
+
   return headerText + data;
 }
 
