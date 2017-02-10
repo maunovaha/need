@@ -1,6 +1,6 @@
-# Strict types
+# Need
 
-Adds layer of strictness to writing JavaScript by throwing errors when variables contains values of unexpected types.
+Adds layer of strictness to writing JavaScript by throwing errors when variables contains invalid values.
 
 ### Problem
 

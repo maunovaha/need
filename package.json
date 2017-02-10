@@ -1,12 +1,12 @@
 {
-  "name": "strict-types",
+  "name": "need",
   "version": "1.0.0",
-  "description": "Adds layer of strictness to writing JavaScript by throwing errors when variables contains values of unexpected types.",
+  "description": "Adds layer of strictness to writing JavaScript by throwing errors when variables contains invalid values.",
   "main": "index.js",
   "scripts": {
     "build": "npm run clean && npm run build:*.js && npm run build:*.min.js",
-    "build:*.js": "browserify index.js -d -s strict | exorcist bin/strict-types.js.map | node tasks/header.js > bin/strict-types.js",
-    "build:*.min.js": "browserify index.js -d -s strict | uglifyjs --mangle-props 2 -m -c drop_console=true | node tasks/header.js > bin/strict-types.min.js",
+    "build:*.js": "browserify index.js -d -s Need | exorcist bin/need.js.map | node tasks/header.js > bin/need.js",
+    "build:*.min.js": "browserify index.js -d -s Need | uglifyjs --mangle-props 2 -m -c drop_console=true | node tasks/header.js > bin/need.min.js",
     "watch": "watch 'npm run build' ./src",
     "clean": "rimraf bin/*",
     "lint": "jshint src test tasks",
@@ -14,18 +14,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/maunovaha/strict-types.git"
+    "url": "https://github.com/maunovaha/need.git"
   },
   "bugs": {
-    "url": "https://github.com/maunovaha/strict-types/issues"
+    "url": "https://github.com/maunovaha/need/issues"
   },
-  "homepage": "https://github.com/maunovaha/strict-types#readme",
+  "homepage": "https://github.com/maunovaha/need#readme",
   "keywords": [
     "javascript",
     "util",
     "functional",
     "types",
-    "strict",
+    "strictness",
     "validation",
     "client",
     "browser"
